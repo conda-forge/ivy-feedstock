@@ -13,6 +13,7 @@ cp build/artifact/jars/ivy.jar ${PREFIX}/libexec/${PKG_NAME}
 tee ${PREFIX}/bin/ivy << EOF
 exec \${JAVA_HOME}/bin/java -jar \${CONDA_PREFIX}/libexec/ivy/ivy.jar "\$@"
 EOF
+chmod +x ${PREFIX}/bin/ivy
 
 tee ${PREFIX}/bin/ivy.cmd << EOF
 call %JAVA_HOME%\bin\java -jar %CONDA_PREFIX%\libexec\ivy\ivy.jar %*
